@@ -26,3 +26,19 @@
 // btn.addEventListener("dblclick", (e) => {
 //   console.log(e.target)
 // })
+
+// const anchorTag = document.querySelector("a")
+
+// anchorTag.addEventListener("click", (e) => {
+//   e.preventDefault()
+//   console.log("clicked")
+// })
+
+var removeDuplicates = function (nums) {
+  return nums.reduce((acc, cur) => {
+    acc[cur] = ++acc[cur] || 1
+    return acc
+  }, {})
+}
+
+removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])
