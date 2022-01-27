@@ -34,11 +34,13 @@
 //   console.log("clicked")
 // })
 
-var removeDuplicates = function (nums) {
-  return nums.reduce((acc, cur) => {
-    acc[cur] = ++acc[cur] || 1
-    return acc
-  }, {})
-}
+// ;(function () {
+//   var message = "Vijay"
+//   console.log(message)
+// })()
 
-removeDuplicates([0, 0, 1, 1, 1, 2, 2, 3, 3, 4])
+// console.log(message)
+
+var name
+
+console.log(name)
