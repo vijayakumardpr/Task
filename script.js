@@ -1,22 +1,9 @@
-const increment = document.querySelector(".increment")
-const decrement = document.querySelector(".decrement")
-const button = document.querySelector(".count")
+const grandParent = document.querySelector("#grand-parent")
 
-increment.addEventListener("click", () => {
-  const count = parseInt(button.innerText)
-  if (count < 9) {
-    button.innerText = `${0}${count + 1}`
-  } else {
-    button.innerText = count + 1
-  }
-})
+const children = grandParent.querySelectorAll(".child")
 
-decrement.addEventListener("click", () => {
-  const count = parseInt(button.innerText)
-  if (count === 0) return alert("reached")
-  if (count < 11 && count > 1) {
-    button.innerText = `${0}${count - 1}`
-  } else {
-    button.innerText = count - 1
-  }
-})
+const parentOne = grandParent.querySelector(".parent")
+
+children.forEach((colors) => (colors.style.color = "red"))
+
+parentOne.style.color = "green"
