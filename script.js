@@ -1,14 +1,22 @@
-// const element = document.createElement("div")
-// const spanManual = document.createElement("span")
-// element.innerText = "Hello Vijayakumar"
-// element.style.color = "red"
-// element.className = "test-class"
-// element.id = "test-id"
+const increment = document.querySelector(".increment")
+const decrement = document.querySelector(".decrement")
+const button = document.querySelector(".count")
 
-// document.body.appendChild(element)
+increment.addEventListener("click", () => {
+  const count = parseInt(button.innerText)
+  if (count < 9) {
+    button.innerText = `${0}${count + 1}`
+  } else {
+    button.innerText = count + 1
+  }
+})
 
-// element.appendChild(spanManual)
-
-const btn = document.querySelector("button")
-
-btn.addEventListener("click", () => {})
+decrement.addEventListener("click", () => {
+  const count = parseInt(button.innerText)
+  if (count === 0) return alert("reached")
+  if (count < 11 && count > 1) {
+    button.innerText = `${0}${count - 1}`
+  } else {
+    button.innerText = count - 1
+  }
+})
