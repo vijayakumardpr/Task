@@ -2,6 +2,12 @@
   box-sizing: border-box;
 }
 
-div {
-  color: black;
+.list-item {
+  cursor: pointer;
+  width: min-content;
+}
+
+.list-item:hover {
+  color: red;
+  text-decoration: line-through;
 }

@@ -6,14 +6,13 @@
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div id="grand-parent">
-      Grand Parent
-      <div class="parent">
-        Parent1
-        <div class="child">Child 1</div>
-        <div class="child">Child 2</div>
-      </div>
-      <div>Parent2</div>
-    </div>
+    <form id="new-item-form">
+      <label for="item-input">New Item</label>
+      <input type="text" id="item-input" />
+      <button type="submit">Add Item</button>
+    </form>
+
+    <div id="list"></div>
+    <div id="remove-list"></div>
   </body>
 </html>

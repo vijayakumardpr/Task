@@ -1,9 +1,19 @@
-const grandParent = document.querySelector("#grand-parent")
+const form = document.querySelector("#new-item-form")
+const input = document.querySelector("#item-input")
+const list = document.querySelector("#list")
+const completedTask = document.querySelector("#remove-list")
 
-const children = grandParent.querySelectorAll(".child")
+form.addEventListener("submit", (e) => {
+  e.preventDefault()
+  const item = document.createElement("div")
+  item.innerText = input.value
+  item.classList.add("list-item")
+  list.appendChild(item)
 
-const parentOne = grandParent.querySelector(".parent")
+  input.value = ""
 
-children.forEach((colors) => (colors.style.color = "red"))
-
-parentOne.style.color = "green"
+  item.addEventListener("click", () => {
+    list.removeChild(item)
+    completedTask.append(item)
+  })
+})
