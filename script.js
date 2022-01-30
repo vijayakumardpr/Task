@@ -1,14 +1,20 @@
 function findLongestWordLength(str) {
-  return str.split(" ").map((element) => {
-    return element.split("").length
-  })
+  const arr = []
+  str.split(" ").forEach((ele) => arr.push(ele.length))
+  return Math.max(...arr)
 }
 
 console.log(
   findLongestWordLength("The quick brown fox jumped over the lazy dog")
 )
 
-let arr = [1, 2, 3, 4]
-console.log(arr)
+let arr = ["ab", "b", "c", "d"]
 
-console.log(Math.max(...arr))
+// console.log(
+//   arr.forEach((ele) => {
+//     return ele
+//   })
+// )
+// map((element) => {
+//   return element.split("").length
+// })
