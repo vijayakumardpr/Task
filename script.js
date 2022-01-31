@@ -1,20 +1,19 @@
-function findLongestWordLength(str) {
-  const arr = []
-  str.split(" ").forEach((ele) => arr.push(ele.length))
-  return Math.max(...arr)
+// function insertPosition(nums, target) {
+//   for (let i = 0; i < nums.length; i++) {
+//     // console.log(array[i])
+//     if (nums[i] === target) {
+//       return i
+//     }
+//   }
+// }
+
+// console.log(insertPosition([1, 2, 3, 4, 5], 5))
+
+let array = [1, 3, 5, 4]
+
+for (let i = 0; i < array.length; i++) {
+  // console.log(array[i])
+  if (array[i] === 2) {
+    console.log(i)
+  }
 }
-
-console.log(
-  findLongestWordLength("The quick brown fox jumped over the lazy dog")
-)
-
-let arr = ["ab", "b", "c", "d"]
-
-// console.log(
-//   arr.forEach((ele) => {
-//     return ele
-//   })
-// )
-// map((element) => {
-//   return element.split("").length
-// })
