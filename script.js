@@ -8,27 +8,43 @@
 
 const form = document.querySelector("#quiz-form")
 const answers = document.querySelectorAll(".answer")
-const questions = Array.from(document.querySelectorAll(".question-item"))
+const questions = document.querySelectorAll(".question-item")
 const alert = document.querySelector("#alert")
 
 // TODO: 3. Create a submit event listener for the form that does the following.
 form.addEventListener("submit", (e) => {
   //    1. Prevent the default behaviour
   e.preventDefault()
-
+  //   questions.forEach((crt) => {
+  //     crt.classList.add("incorrect")
+  //     crt.classList.remove("correct")
+  //   })
   answers.forEach((answer) => {
     //    2. Get all selected answers (use the `checked` property on the input to determine if it is selected or not)
     if (answer.checked) {
       const selectedAnswer = answer.value
+      //   const questionItem = answer.closest(".question-item")
+      //   console.log(questionItem)
+
       //    3. Loop through the selected answer to see if they are correct or not (Check the value of the answer to see if it is the string "true")
       //    4. For each correct answer add the class `correct` to the parent with the class `question-item` and remove the class `incorrect`.
       //    5. For each incorrect answer add the class `incorrect` to the parent with the class `question-item` and remove the class `correct`.
       if (selectedAnswer === "true") {
-        questions.classList.add("correct")
-        questions.classList.remove("incorrect")
+        questions.forEach((crt) => {
+          crt.classList.add("correct")
+          crt.classList.remove("incorrect")
+        })
+
+        // questionItem.classList.add("correct")
+        // questionItem.classList.remove("incorrect")
       } else {
-        questions.classList.add("incorrect")
-        questions.classList.remove("correct")
+        questions.forEach((crt) => {
+          crt.classList.add("incorrect")
+          crt.classList.remove("correct")
+        })
+
+        // questionItem.classList.add("incorrect")
+        // questionItem.classList.remove("correct")
       }
     }
 
@@ -37,7 +53,6 @@ form.addEventListener("submit", (e) => {
   })
 })
 
-console.log(questions)
 // const ele = document.createElement("div")
 
 // setTimeout(() => {
