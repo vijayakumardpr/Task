@@ -1,14 +1,4 @@
-const person = {
-  name: "vijayakumar",
-  age: 25,
-  address: {
-    street: "2nd main road",
-    city: "India",
-  },
+function test(){
+    console.log("Hi 1");
+    
 }
-
-console.log(person)
-
-Object.entries(person).forEach(([key, value]) => {
-  console.log(key, value)
-})
