@@ -1,11 +1,23 @@
-body {
-  background-color: aquamarine;
+* {
+  box-sizing: border-box;
 }
 
-.list-item {
+body {
+  height: 100vh;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .list-item {
+  cursor: pointer;
+} */
+
+.delete {
   cursor: pointer;
 }
-
 .completed {
   color: red;
 }

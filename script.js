@@ -16,6 +16,8 @@ form.addEventListener("submit", (e) => {
   btn.innerText = "Delete"
 
   list.classList.add("list-item")
+  btn.classList.add("delete")
+
   items.appendChild(list)
   list.appendChild(btn)
 
