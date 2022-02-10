@@ -1,37 +1,38 @@
-#new-todo-form {
+body {
+  background-color: #dcdcdc;
+  padding: 1rem;
+  margin: 0;
+}
+
+.card {
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  background-color: white;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card-header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 0.5rem;
+  font-size: 2rem;
+  align-items: center;
+  margin-bottom: -1px;
 }
 
-#new-todo-form > * {
-  margin: 0.15rem;
+.card-body {
+  padding: 0 0.5rem;
+  height: 0;
+  overflow: hidden;
 }
 
-#list {
-  padding: 0;
-}
-
-.list-item {
-  list-style: none;
-}
-
-.list-item-label:hover,
-[data-list-item-checkbox]:hover {
-  cursor: pointer;
-}
-
-.list-item-label:hover > [data-list-item-text] {
-  color: #333;
-  text-decoration: line-through;
-}
-
-[data-list-item-checkbox]:checked ~ [data-list-item-text] {
-  text-decoration: line-through;
-  color: #aaa;
-}
-
-[data-button-delete] {
-  margin-left: 0.5rem;
+.card-body.show {
+  height: auto;
+  padding: 0.5rem;
 }
 
 button {
