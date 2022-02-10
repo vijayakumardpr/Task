@@ -9,7 +9,6 @@ todos.forEach(renderTodos)
 
 list.addEventListener("change", (e) => {
   if (!e.target.matches("[data-list-item-checkbox]")) return
-
   const parent = e.target.closest(".list-item")
   const todoId = parent.dataset.todoId
   const todo = todos.find((element) => element.id === todoId)
@@ -19,11 +18,11 @@ list.addEventListener("change", (e) => {
 
 list.addEventListener("click", (e) => {
   if (!e.target.matches("[data-button-delete]")) return
-
   const parent = e.target.closest(".list-item")
   parent.remove()
   const todoId = parent.dataset.todoId
   todos = todos.filter((todo) => todo.id !== todoId)
+
   saveTodos()
 })
 form.addEventListener("submit", (e) => {
