@@ -1,5 +1,5 @@
-function sum(...numbers) {
-  return numbers
+function majorityElement(array) {
+  return array
 }
 
-console.log(sum(1, 2, 3, 4, 5, 6, 7))
+console.log(majorityElement([3, 2, 3]))
