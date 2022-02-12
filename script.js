@@ -17,3 +17,7 @@ function outer() {
   }
   inner()
 }
+
+document.addEventListener("submit", function () {
+  console.log("clicked")
+})
