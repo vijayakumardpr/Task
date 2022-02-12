@@ -9,3 +9,11 @@ form.addEventListener("submit", (e) => {
     input.value = ""
   })
 })
+outer()
+function outer() {
+  let a = 45
+  function inner() {
+    console.log(a)
+  }
+  inner()
+}
