@@ -5,19 +5,10 @@ const items = document.querySelector(".items")
 form.addEventListener("submit", (e) => {
   e.preventDefault()
   inputs.forEach((input) => {
-    console.log(input.value)
+    const inputValue = input.value
     input.value = ""
+    const list = document.createElement("div")
+    list.innerText = inputValue
+    items.appendChild(list)
   })
-})
-outer()
-function outer() {
-  let a = 45
-  function inner() {
-    console.log(a)
-  }
-  inner()
-}
-
-document.addEventListener("submit", function () {
-  console.log("clicked")
 })
