@@ -20,3 +20,13 @@ form.addEventListener("submit", (e) => {
     items.appendChild(del)
   })
 })
+
+let firstName = "vijay"
+const person = {
+  firstName: "kyle",
+  fullName() {
+    return this.firstName
+  },
+}
+
+console.log(person.fullName())
