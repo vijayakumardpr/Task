@@ -1,25 +1,11 @@
-const form = document.querySelector("#form")
-const inputs = document.querySelectorAll("input")
-const items = document.querySelector(".items")
+function MainContent() {
+  return <h1> I'm learning React!</h1>
+}
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault()
-  const inputValueArray = []
-  inputs.forEach((input) => {
-    inputValueArray.push(input.value)
-    // const inputValue = input.value
-    input.value = ""
-  })
+ReactDOM.render(
+  <div>
+    <MainContent />
+  </div>,
 
-  const list = document.createElement("div")
-  const edit = document.createElement("button")
-  const del = document.createElement("button")
-
-  edit.innerText = "Edit"
-  del.innerText = "Delete"
-
-  list.innerText = inputValueArray
-  items.appendChild(list)
-  items.appendChild(edit)
-  items.appendChild(del)
-})
+  document.getElementById("root")
+)
