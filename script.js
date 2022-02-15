@@ -1,9 +1,9 @@
 function Header() {
   return (
-    <header className="header">
+    <header>
       <nav className="navbar">
-        <img src="./react-logo.png" width="60px" />
-        <ul className="menu">
+        <img className="nav-logo" src="./react-logo.png" />
+        <ul className="nav-list">
           <li>Home</li>
           <li>About</li>
           <li>Contact</li>
@@ -15,7 +15,7 @@ function Header() {
 
 function Body() {
   return (
-    <div>
+    <div className="main">
       <h1>Reasons I'm excited to learn React</h1>
       <ol>
         <li>
@@ -29,7 +29,7 @@ function Body() {
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <p>© 2022 Bob development. All rights reserved</p>
     </footer>
   )
@@ -46,3 +46,27 @@ function ChallageTwo() {
 }
 
 ReactDOM.render(<ChallageTwo />, document.getElementById("root"))
+
+let string = "  Bob    Loves  Alice   "
+
+function reverseWords(s) {
+  const removeSpace = s.trim()
+  const reverseTheWords = removeSpace.split(" ").filter((k) => {
+    if (k) {
+      return k
+    }
+  })
+  const a = reverseTheWords.reverse().toString()
+  const removeComma = a.replace(/,/g, " ")
+  return removeComma
+}
+
+console.log(reverseWords(string))
+
+const a = string.split(" ").filter((k) => {
+  if (k) {
+    return k
+  }
+})
+
+console.log(a)
