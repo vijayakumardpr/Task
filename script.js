@@ -1,11 +1,16 @@
-function MainContent() {
-  return <h1> I'm learning React!</h1>
-}
+const element = (
+  <div>
+    <h1>
+      Father
+      <p>ChildrenOne</p>
+      <p>ChildrenTwo</p>
+    </h1>
+    <h1>Siblings</h1>
+  </div>
+)
 
 ReactDOM.render(
-  <div>
-    <MainContent />
-  </div>,
+  element,
 
   document.getElementById("root")
 )
