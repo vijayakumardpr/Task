@@ -1,3 +1,20 @@
 .header {
-  color: green;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  margin: 0;
+}
+
+.menu li {
+  list-style: none;
+  margin: 10px;
 }
