@@ -46,27 +46,3 @@ function ChallageTwo() {
 }
 
 ReactDOM.render(<ChallageTwo />, document.getElementById("root"))
-
-let string = "  Bob    Loves  Alice   "
-
-function reverseWords(s) {
-  const removeSpace = s.trim()
-  const reverseTheWords = removeSpace.split(" ").filter((k) => {
-    if (k) {
-      return k
-    }
-  })
-  const a = reverseTheWords.reverse().toString()
-  const removeComma = a.replace(/,/g, " ")
-  return removeComma
-}
-
-console.log(reverseWords(string))
-
-const a = string.split(" ").filter((k) => {
-  if (k) {
-    return k
-  }
-})
-
-console.log(a)
