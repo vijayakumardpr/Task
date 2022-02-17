@@ -1,0 +1,151 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #343a40;
+}
+
+.codepen-container {
+  height: 900px;
+  width: 900px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+}
+
+.plan {
+  height: 650px;
+  width: 300px;
+  /* background-color: bisque; */
+  text-align: center;
+}
+
+.free {
+  border-top: 8px solid grey;
+}
+
+.starter {
+  border-top: 8px solid #4cc9f0;
+}
+
+.developer {
+  border-top: 8px solid #c77dff;
+}
+
+.super {
+  border-top: 8px solid #47cf73;
+}
+
+li > p,
+div > p {
+  margin: 0;
+}
+
+li {
+  margin-bottom: 1em;
+  list-style-type: " ✔  ";
+}
+
+li:first-child {
+  list-style-type: "←  ";
+}
+span {
+  position: relative;
+  font-size: 2.5rem;
+  font-weight: bold;
+  right: 20px;
+}
+span::before,
+.dspan::before,
+.sspan::before {
+  content: "$";
+  position: absolute;
+  right: 20px;
+  top: 5px;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.dspan::before,
+.sspan::before {
+  right: 40px;
+  top: 5px;
+}
+span::after,
+.dspan::after,
+.sspan::after {
+  content: "/month";
+  position: absolute;
+  left: 20px;
+  bottom: 5px;
+  font-size: 1.1rem;
+  font-weight: normal;
+}
+
+.dspan::after,
+.sspan::after {
+  left: 40px;
+  bottom: 5px;
+}
+
+.forever {
+  height: 263px;
+}
+
+.plan-details {
+  /* margin: 10px; */
+  border-top: 1px solid #ccc;
+  text-align: left;
+}
+
+button {
+  padding: 0.75em 1em;
+  border: none;
+  outline: none;
+  border-radius: 0.3em;
+  font-weight: bold;
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
+.btn-starter {
+  background-color: #4cc9f0;
+}
+
+.btn-developer {
+  background-color: #c77dff;
+}
+
+.btn-super {
+  background-color: #47cf73;
+}
+
+.btn-starter:hover,
+.btn-developer:hover,
+.btn-super:hover {
+  background-color: #495057;
+  color: white;
+}
+
+.switch-to-billing {
+  margin: 15px;
+  text-decoration-style: dotted;
+}
+
+.switch-to-billing:hover {
+  text-decoration: underline;
+}
+
+.switch-to-billing a {
+  text-decoration: none;
+  color: #3d88c3;
+}
