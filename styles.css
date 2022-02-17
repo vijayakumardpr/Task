@@ -58,13 +58,13 @@ li {
 li:first-child {
   list-style-type: "←  ";
 }
-span {
+.dollar {
   position: relative;
   font-size: 2.5rem;
   font-weight: bold;
   right: 20px;
 }
-span::before,
+.dollar::before,
 .dspan::before,
 .sspan::before {
   content: "$";
@@ -80,7 +80,7 @@ span::before,
   right: 40px;
   top: 5px;
 }
-span::after,
+.dollar::after,
 .dspan::after,
 .sspan::after {
   content: "/month";
@@ -149,3 +149,5 @@ button {
   text-decoration: none;
   color: #3d88c3;
 }
+
+
