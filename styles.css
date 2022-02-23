@@ -227,7 +227,7 @@ body {
 
 .grid-container {
   display: grid;
-  grid-template-columns: repeat(2, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto, minmax(450px, 1fr));
 }
 
 .last {
