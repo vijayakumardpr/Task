@@ -106,3 +106,131 @@ body {
   color: white;
   border: none;
 }
+.videos {
+  background-color: #f8f9fa;
+}
+.video-section {
+  padding: 3em 1.5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  row-gap: 24px;
+}
+
+.thumbnail {
+  position: relative;
+}
+
+.thumbnail::before {
+  position: absolute;
+  content: attr(data-duration);
+  background-color: black;
+  bottom: 12px;
+  right: 12px;
+  color: white;
+  padding: 0.2em 0.3em;
+  border-radius: 0.5em;
+  font-size: 0.75rem;
+}
+
+.video-bottom-section {
+  display: flex;
+  margin-top: 8px;
+}
+
+.video-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-details a {
+  text-decoration: none;
+  color: black;
+}
+
+.channel-icon {
+  height: 36px;
+  width: 36px;
+  border-radius: 100px;
+  margin-right: 24px;
+}
+
+.posts-icon {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.posts-top {
+  display: flex;
+  align-items: center;
+}
+
+.channel-name,
+.video-post {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.post-middle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.post-middle p {
+  margin: 0;
+}
+
+.post-container {
+  width: 400px;
+  height: 200px;
+  padding: 0.25em 1em;
+  padding-bottom: 0;
+  border: 1px solid rgba(85, 84, 84, 0.5);
+}
+
+.image-post {
+  width: 150px;
+  height: 100px;
+}
+
+.post-last {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px;
+}
+
+.post-like,
+.post-dislike,
+.post-comment,
+.post-more {
+  height: 22px;
+}
+
+.left-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.post-liked {
+  margin-right: 15px;
+  margin-left: 5px;
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.right-bottom {
+  display: flex;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(450px, 1fr));
+}
+
+.last {
+  margin: 2em;
+  border-top: 3px solid #ccc;
+}
