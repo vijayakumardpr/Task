@@ -5,44 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
-    <title>Discord Login</title>
+    <script type="module" src="script.js"></script>
+    <title>Responsive Navbar</title>
   </head>
   <body>
-    <main class="main">
-      <section class="login-details">
-        <h2>Welcome back!</h2>
-        <p class="sub-title">We're so excited to see you again!</p>
-        <form action="#">
-          <p>
-            <label for="email">Email or Phone Number</label> <br />
-            <input type="text" name="email" id="email" required />
-          </p>
-          <p>
-            <label for="password">Password</label> <br />
-            <input
-              type="password"
-              name="password"
-              id="password"
-              required
-            /><br />
-            <a href="#">Forgot your password?</a>
-          </p>
-          <button>Login</button> <br />
-          <span> Need an account? </span> <a href="#">Register</a>
-        </form>
-      </section>
-      <section class="alternate--login">
-        <img
-          src="images/QR_Code.png"
-          alt="Discord_QR_Code"
-          width="200"
-          height="200"
-        />
-        <h2>Log in with QR Code</h2>
-        <p>Scan this with the <strong>Discord mobile</p>
-        <p>app</strong> to log in instantly</p>
-      </section>
-    </main>
+    <div class="search-wrapper">
+      <label for="search">Search Users</label>
+      <input type="search" id="search" data-search />
+    </div>
+    <div class="user-cards" data-user-cards-container></div>
+    <template data-user-template>
+      <div class="card">
+        <div class="header" data-header></div>
+        <div class="body" data-body></div>
+      </div>
+    </template>
   </body>
 </html>
