@@ -1,42 +1,20 @@
-.search-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+body {
+  margin: 0;
 }
 
-input {
-  font-size: 1rem;
-  border-radius: 1em;
-  outline: none;
-  border: 1px solid #ccc;
-}
-
-input:hover {
-  box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.2);
-}
-
-.user-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 0.25rem;
+.container {
+  background-color: #333;
+  padding: 1rem;
   margin-top: 1rem;
 }
 
-.card {
-  border: 1px solid black;
+.draggable {
   background-color: white;
-  padding: 0.5rem;
+  padding: 1rem;
+  border: 1px solid black;
+  cursor: move;
 }
 
-.card > .header {
-  margin-bottom: 0.25rem;
-}
-
-.card > .body {
-  font-size: 0.8rem;
-  color: #777;
-}
-
-.hide {
-  display: none;
+.draggable.dragging {
+  opacity: 0.5;
 }
