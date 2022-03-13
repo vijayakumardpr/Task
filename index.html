@@ -6,9 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
-    <title>Drag and Drop</title>
+    <title>skeleton animation</title>
   </head>
   <body>
-    
+    <div class="grid"></div>
+    <template id="card-template">
+      <div class="card">
+        <div class="header">
+          <img
+            class="header-img skeleton"
+            src="https://source.unsplash.com/100x100/?nature"
+          />
+          <div class="title" data-title>
+            <div class="skeleton skeleton-text"></div>
+            <div class="skeleton skeleton-text"></div>
+          </div>
+        </div>
+        <div data-body>
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text"></div>
+          <div class="skeleton skeleton-text"></div>
+        </div>
+      </div>
+    </template>
   </body>
 </html>
