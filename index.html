@@ -6,29 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
-    <title>skeleton animation</title>
+    <title>Todo List</title>
   </head>
   <body>
-    <div class="grid"></div>
-    <template id="card-template">
-      <div class="card">
-        <div class="header">
-          <img
-            class="header-img skeleton"
-            src="https://source.unsplash.com/100x100/?nature"
-          />
-          <div class="title" data-title>
-            <div class="skeleton skeleton-text"></div>
-            <div class="skeleton skeleton-text"></div>
-          </div>
-        </div>
-        <div data-body>
-          <div class="skeleton skeleton-text"></div>
-          <div class="skeleton skeleton-text"></div>
-          <div class="skeleton skeleton-text"></div>
-          <div class="skeleton skeleton-text"></div>
-        </div>
-      </div>
+    <form id="new-todo-form">
+      <label for="todo-input">New Todo</label>
+      <input type="text" id="todo-input" />
+      <button type="submit">Add Todo</button>
+      <button class="clear">ClearAll</button>
+    </form>
+
+    <ul id="list"></ul>
+
+    <template id="list-item-template">
+      <li class="list-item">
+        <label class="list-item-label">
+          <input type="checkbox" data-list-item-checkbox />
+          <span data-list-item-text></span>
+        </label>
+        <button data-button-delete>Delete</button>
+      </li>
     </template>
   </body>
 </html>

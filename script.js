@@ -1,38 +1,45 @@
-const grid = document.querySelector(".grid")
-const template = document.getElementById("card-template")
+const form = document.querySelector("#new-todo-form")
+const list = document.querySelector("#list")
+const input = document.querySelector("#todo-input")
+const template = document.querySelector("#list-item-template")
 
-for (let i = 0; i < 25; i++) {
-  grid.append(template.content.cloneNode(true))
+let todos = load() // []
+todos.forEach(renderTodos)
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault()
+  const todoName = input.value
+  if (todoName === "") return
+  todos.push(todoName)
+  input.value = ""
+  renderTodos(todoName)
+  save()
+})
+
+function renderTodos(todoName) {
+  const templateClone = template.content.cloneNode(true)
+  const textElement = templateClone.querySelector("[data-list-item-text]")
+  textElement.textContent = todoName
+  list.appendChild(templateClone)
 }
 
-// fetch("https://jsonplaceholder.typicode.com/posts")
-//   .then((res) => res.json())
-//   .then((posts) => {
-//     grid.innerHTML = ""
-//     posts.forEach((post) => {
-//       const div = template.content.cloneNode(true)
-//       div.querySelector("[data-title]").textContent = post.title
-//       div.querySelector("[data-body]").textContent = post.body
-//       grid.append(div)
-//     })
-//   })
+function save() {
+  localStorage.setItem("AdvanceTodo", JSON.stringify(todos))
+  console.log(todos)
+}
 
-console.log(users)
-// const grid = document.querySelector(".grid")
-// const cardTemplate = document.getElementById("card-template")
-// for (let i = 0; i < 10; i++) {
-//   grid.append(cardTemplate.content.cloneNode(true))
-// }
+function load() {
+  const savedItems = localStorage.getItem("AdvanceTodo")
+  return JSON.parse(savedItems) || []
+}
 
-// fetch("https://jsonplaceholder.typicode.com/posts")
-//   .then((res) => res.json())
-//   .then((posts) => {
+const person = {
+  name: "jess",
+  age: 20,
+  gender: "",
+}
 
-//     posts.forEach((post) => {
+person.name ||= "chelsea" //jess
 
-//       const div = cardTemplate.content.cloneNode(true)
-//       div.querySelector("[data-title]").textContent = post.title
-//       div.querySelector("[data-body]").textContent = post.body
-//       grid.append(div)
-//     })
-//   })
+person.gender ||= "Female" //female
+console.log(person)
