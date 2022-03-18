@@ -32,14 +32,3 @@ function load() {
   const savedItems = localStorage.getItem("AdvanceTodo")
   return JSON.parse(savedItems) || []
 }
-
-const person = {
-  name: "jess",
-  age: 20,
-  gender: "",
-}
-
-person.name ||= "chelsea" //jess
-
-person.gender ||= "Female" //female
-console.log(person)
