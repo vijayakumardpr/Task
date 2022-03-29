@@ -1,34 +1,43 @@
-const form = document.querySelector("#new-todo-form")
-const list = document.querySelector("#list")
-const input = document.querySelector("#todo-input")
-const template = document.querySelector("#list-item-template")
+const slides = document.querySelectorAll(".carousel-item")
+let slidePosition = 0
+const totalSlides = slides.length
 
-let todos = load() // []
-todos.forEach(renderTodos)
+let prev = document.getElementById("carousel-button-prev")
+let next = document.getElementById("carousel-button-next")
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault()
-  const todoName = input.value
-  if (todoName === "") return
-  todos.push(todoName)
-  input.value = ""
-  renderTodos(todoName)
-  save()
-})
+prev.addEventListener("click", moveToPrevSlide)
+next.addEventListener("click", moveToNextSlide)
 
-function renderTodos(todoName) {
-  const templateClone = template.content.cloneNode(true)
-  const textElement = templateClone.querySelector("[data-list-item-text]")
-  textElement.textContent = todoName
-  list.appendChild(templateClone)
+function moveToNextSlide() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("carousel-item-visible")
+  }
+
+  if (slidePosition === totalSlides - 1) {
+    slidePosition = 0
+  } else {
+    slidePosition = slidePosition + 1
+  }
+
+  slides[slidePosition].classList.add("carousel-item-visible")
 }
 
-function save() {
-  localStorage.setItem("AdvanceTodo", JSON.stringify(todos))
-  console.log(todos)
+function moveToPrevSlide() {
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("carousel-item-visible")
+  }
+
+  if (slidePosition === 0) {
+    slidePosition = totalSlides - 1
+  } else {
+    slidePosition = slidePosition - 1
+  }
+  slides[slidePosition].classList.add("carousel-item-visible")
 }
 
-function load() {
-  const savedItems = localStorage.getItem("AdvanceTodo")
-  return JSON.parse(savedItems) || []
-}
+// function hideAllSlides() {
+//   for (let slide of slides) {
+//     slide.classList.remove("carousel-item-visible")
+//     slide.classList.add("carousel-item-hidden")
+//   }
+// }
