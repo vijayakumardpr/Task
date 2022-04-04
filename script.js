@@ -1,43 +1,127 @@
-const slides = document.querySelectorAll(".carousel-item")
-let slidePosition = 0
-const totalSlides = slides.length
+const washCar = document.getElementById("wash-car")
+const mowLawn = document.getElementById("mow-lawn")
+const pullWeeds = document.getElementById("pull-weeds")
+const invoice = document.getElementById("invoice-genarator")
+const invoiceTotal = document.getElementById("invoice-total")
+const reset = document.getElementById("invoice-footer")
+const template = document.querySelector(".workshop-template")
 
-let prev = document.getElementById("carousel-button-prev")
-let next = document.getElementById("carousel-button-next")
+let sum = 0
 
-prev.addEventListener("click", moveToPrevSlide)
-next.addEventListener("click", moveToNextSlide)
+const serviceItems = [
+  { service: "Wash Car", cost: 10 },
+  { service: "Mow Lawn", cost: 20 },
+  { service: "Pull Weeds", cost: 30 },
+]
 
-function moveToNextSlide() {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("carousel-item-visible")
-  }
+washCar.addEventListener("click", () => {
+  const templateClone = template.content.cloneNode(true)
+  const service = templateClone.querySelector(".services")
+  service.textContent = `${serviceItems[0].service}`
+  const cost = templateClone.querySelector(".service-cost")
+  cost.textContent = `$${serviceItems[0].cost}`
+  washCar.disabled = true
+  // invoice.innerHTML += `
+  // <div class="dummy">
+  // <div> ${serviceItems[0].service} <span class="remove">remove<span></div>
+  //  <div> $${serviceItems[0].cost} </div>
+  // </div>
+  //   `
+  // washCar.disabled = true
+  sum = sum + serviceItems[0].cost
+  invoiceTotal.textContent = `$${sum}`
+  const list = templateClone.querySelector(".service-list")
+  const remove = templateClone.querySelector(".remove")
+  remove.addEventListener("click", () => {
+    invoice.removeChild(list)
+    // list.remove()
+    sum = sum - serviceItems[0].cost
+    invoiceTotal.textContent = `$${sum}`
+    washCar.disabled = false
+  })
+  // document.querySelector(".remove").addEventListener("click", () => {
+  //   const dummy = document.querySelector(".dummy")
+  //   console.log(dummy)
+  //   dummy.remove()
+  //   sum = sum - serviceItems[0].cost
+  //   invoiceTotal.textContent = `$${sum}`
+  //   washCar.disabled = false
+  // })
+  invoice.appendChild(templateClone)
+})
 
-  if (slidePosition === totalSlides - 1) {
-    slidePosition = 0
-  } else {
-    slidePosition = slidePosition + 1
-  }
+mowLawn.addEventListener("click", () => {
+  const templateClone = template.content.cloneNode(true)
+  const service = templateClone.querySelector(".services")
+  service.textContent = serviceItems[1].service
+  const cost = templateClone.querySelector(".service-cost")
+  cost.textContent = `$${serviceItems[1].cost}`
 
-  slides[slidePosition].classList.add("carousel-item-visible")
-}
+  mowLawn.disabled = true
+  //   invoice.innerHTML += `
+  //   <div class='dummy'>
+  //   <div> ${serviceItems[1].service} <span class="remove1">remove<span></div>
+  //   <div> $${serviceItems[1].cost} </div>
+  //   </div>
+  //    `
+  //   mowLawn.disabled = true
+  sum = sum + serviceItems[1].cost
+  invoiceTotal.textContent = `$${sum}`
+  const list = templateClone.querySelector(".service-list")
+  const remove = templateClone.querySelector(".remove")
+  remove.addEventListener("click", () => {
+    invoice.removeChild(list)
+    // list.remove()
+    sum = sum - serviceItems[1].cost
+    invoiceTotal.textContent = `$${sum}`
+    mowLawn.disabled = false
+  })
+  //   document.querySelector(".remove1").addEventListener("click", () => {
+  //     console.log("clicked")
+  //     const dummy1 = document.querySelector(".dummy")
+  //     dummy1.remove()
+  //     sum = sum - serviceItems[1].cost
+  //     invoiceTotal.textContent = `$${sum}`
+  //     washCar.disabled = false
+  //   })
+  invoice.appendChild(templateClone)
+})
 
-function moveToPrevSlide() {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].classList.remove("carousel-item-visible")
-  }
+pullWeeds.addEventListener("click", () => {
+  const templateClone = template.content.cloneNode(true)
+  const service = templateClone.querySelector(".services")
+  service.textContent = serviceItems[2].service
+  const cost = templateClone.querySelector(".service-cost")
+  cost.textContent = `$${serviceItems[2].cost}`
+  pullWeeds.disabled = true
+  // invoice.innerHTML += `
+  // <div class='dummy'>
+  // <div> ${serviceItems[2].service} <span class="remove2">remove<span></div>
+  // <div> $${serviceItems[2].cost} </div>
+  // </div>
+  // `
+  // pullWeeds.disabled = true
+  sum = sum + serviceItems[2].cost
+  invoiceTotal.textContent = `$${sum}`
+  const list = templateClone.querySelector(".service-list")
+  const remove = templateClone.querySelector(".remove")
+  remove.addEventListener("click", () => {
+    invoice.removeChild(list)
+    // list.remove()
+    sum = sum - serviceItems[2].cost
+    invoiceTotal.textContent = `$${sum}`
+    pullWeeds.disabled = false
+  })
+  // document.querySelector(".remove2").addEventListener("click", () => {
+  //   const dummy2 = document.querySelector(".dummy")
+  //   dummy2.remove()
+  //   sum = sum - serviceItems[2].cost
+  //   invoiceTotal.textContent = `$${sum}`
+  //   washCar.disabled = false
+  // })
+  invoice.appendChild(templateClone)
+})
 
-  if (slidePosition === 0) {
-    slidePosition = totalSlides - 1
-  } else {
-    slidePosition = slidePosition - 1
-  }
-  slides[slidePosition].classList.add("carousel-item-visible")
-}
-
-// function hideAllSlides() {
-//   for (let slide of slides) {
-//     slide.classList.remove("carousel-item-visible")
-//     slide.classList.add("carousel-item-hidden")
-//   }
-// }
+reset.addEventListener("click", () => {
+  location.reload()
+})
