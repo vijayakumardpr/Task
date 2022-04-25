@@ -9,41 +9,20 @@
     <title>Invoice</title>
   </head>
   <body>
-    <div id="invoice-container">
-      <div id="header-invoice">
-        <h2>Invoice creator</h2>
-        <p>Thanks for choosing GoodCorp, LLC!</p>
-      </div>
-      <div id="invoice-hero">
-        <div id="invoice-btn">
-          <button class="btn" id="wash-car">Wash car: $10</button>
-          <button class="btn" id="mow-lawn">Mow Lawn: $20</button>
-          <button class="btn" id="pull-weeds">Pull Weeds: $30</button>
-        </div>
-        <div id="invoice-task">
-          <h5>TASK</h5>
-          <h5>TOTAL</h5>
-        </div>
-        <div id="invoice-genarator"></div>
-        <div id="invoice-total-heading">
-          <h5>NOTES</h5>
-          <h5>TOTAL AMOUNT</h5>
-        </div>
-        <div id="invoice-total">$0</div>
-
-        <div id="invoice-footer">
-          <button>Send invoice</button>
-        </div>
+    <div class="wrapper">
+      <h2>
+        Generate a <br />
+        <span>random password</span>
+      </h2>
+      <p>Never use an insecure password again.</p>
+      <input type="number" id="input" />
+      <button>Generate passwords</button>
+      <div class="password-container">
+        <input onclick="copy()" class="pwd1" value="..." type="text" />
+        <input onclick="copy()" class="pwd2" value="..." type="text" />
+        <input onclick="copy()" class="pwd3" value="..." type="text" />
+        <input onclick="copy()" class="pwd4" value="..." type="text" />
       </div>
     </div>
-    </div>
-
-    <template class="workshop-template">
-      <li class="service-list">
-        <div class="services"></div>
-        <span class="remove">remove</span>
-             <div class="service-cost"></div>
-      </li>
-    </template> 
   </body>
 </html>
